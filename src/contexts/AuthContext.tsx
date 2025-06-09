@@ -1,4 +1,3 @@
-"use client"
 
 import { createContext, useState, useEffect, type ReactNode } from "react"
 import type { User } from "../types"
@@ -39,7 +38,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     checkAuth()
   }, [])
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string) => {
     try {
       // Simulate login API call
       const mockUser: User = {
@@ -51,7 +50,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
       setUser(mockUser)
       localStorage.setItem("user", JSON.stringify(mockUser))
-    } catch (error) {
+    } catch {
       throw new Error("Login failed")
     }
   }

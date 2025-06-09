@@ -1,4 +1,3 @@
-"use client"
 
 import { useState } from "react"
 import {
@@ -59,11 +58,7 @@ const reviews: Review[] = [
   },
 ]
 
-interface CommentSectionProps {
-  companyId: string
-}
-
-export const CommentSection = ({ companyId }: CommentSectionProps) => {
+export const CommentSection = () => {
   const [sortBy, setSortBy] = useState("recent")
   const [newComment, setNewComment] = useState("")
   const [newRating, setNewRating] = useState(0)

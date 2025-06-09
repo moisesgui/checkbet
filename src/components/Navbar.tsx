@@ -1,4 +1,3 @@
-"use client"
 
 import type React from "react"
 
@@ -30,7 +29,7 @@ import {
   Text,
 } from "@chakra-ui/react"
 import { FiSearch, FiSun, FiMoon, FiMenu, FiUser, FiLogOut, FiSettings } from "react-icons/fi"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import { useAuth } from "../hooks/useAuth"
 
@@ -39,8 +38,7 @@ export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [searchQuery, setSearchQuery] = useState("")
   const { user, logout } = useAuth()
-  const navigate = useNavigate()
-
+  
   const bgColor = useColorModeValue("white", "gray.800")
   const borderColor = useColorModeValue("gray.200", "gray.700")
 

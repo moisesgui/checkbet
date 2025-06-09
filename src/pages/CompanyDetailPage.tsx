@@ -323,7 +323,7 @@ export const CompanyDetailPage = () => {
 
             {/* Reviews Tab */}
             <TabPanel px={0}>
-              <CommentSection companyId={company.id} />
+              <CommentSection />
             </TabPanel>
           </TabPanels>
         </Tabs>
