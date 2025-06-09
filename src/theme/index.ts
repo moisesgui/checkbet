@@ -1,4 +1,5 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
+import type { StyleFunctionProps } from "@chakra-ui/theme-tools"
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -35,7 +36,7 @@ const fonts = {
 }
 
 const styles = {
-  global: (props: any) => ({
+  global: (props: StyleFunctionProps) => ({
     body: {
       bg: props.colorMode === "dark" ? "gray.900" : "gray.50",
       color: props.colorMode === "dark" ? "white" : "gray.800",
@@ -50,7 +51,7 @@ const components = {
       borderRadius: "md",
     },
     variants: {
-      solid: (props: any) => ({
+      solid: (props: StyleFunctionProps) => ({
         bg: props.colorMode === "dark" ? "brand.500" : "brand.500",
         color: "white",
         _hover: {
@@ -60,10 +61,10 @@ const components = {
     },
   },
   Card: {
-    baseStyle: (props: any) => ({
+    baseStyle: (props: StyleFunctionProps) => ({
       container: {
         bg: props.colorMode === "dark" ? "gray.800" : "white",
-        borderRadius: "lg",
+        borderRadius: "22px",
         boxShadow: "md",
         overflow: "hidden",
       },

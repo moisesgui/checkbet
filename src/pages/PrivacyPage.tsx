@@ -6,24 +6,24 @@ export const PrivacyPage = () => {
       <Container maxW="container.xl">
         <VStack spacing={6} align="start">
           <Heading as="h1" size="xl">
-            Privacy Policy
+            Política de Privacidade
           </Heading>
           <Text fontSize="lg">
-            Your privacy is important to us. This policy explains how we collect and use your information.
+            Sua privacidade é importante para nós. Esta política explica como coletamos e usamos suas informações.
           </Text>
           <Heading as="h2" size="lg">
-            Information We Collect
+            Informações que Coletamos
           </Heading>
           <Text>
-            We collect information you provide directly to us, such as when you create an account, submit a review, or
-            contact us for support.
+            Coletamos informações que você nos fornece diretamente, como quando cria uma conta, envia uma análise ou
+            entra em contato conosco para suporte.
           </Text>
           <Heading as="h2" size="lg">
-            How We Use Your Information
+            Como Usamos Suas Informações
           </Heading>
           <Text>
-            We use the information we collect to provide, maintain, and improve our services, process transactions, and
-            communicate with you.
+            Usamos as informações coletadas para fornecer, manter e melhorar nossos serviços, processar transações e
+            nos comunicar com você.
           </Text>
         </VStack>
       </Container>

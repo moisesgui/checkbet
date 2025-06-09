@@ -6,22 +6,22 @@ export const AboutPage = () => {
       <Container maxW="container.xl">
         <VStack spacing={6} align="start">
           <Heading as="h1" size="xl">
-            About BET Review Platform
+            Sobre a Plataforma de Revisão de Apostas
           </Heading>
           <Text fontSize="lg">
-            We are the most trusted platform for reviewing and verifying online betting and casino companies. Our
-            mission is to provide transparency and protect consumers by offering comprehensive reviews and professional
-            verification services.
+            Somos a plataforma mais confiável para revisar e verificar empresas de apostas e cassinos online. Nossa
+            missão é fornecer transparência e proteger os consumidores, oferecendo análises abrangentes e serviços
+            profissionais de verificação.
           </Text>
           <Text>
-            Founded by a team of legal experts and industry professionals, we understand the importance of due diligence
-            when it comes to online gambling platforms. Our verification services help lawyers, analysts, and everyday
-            users make informed decisions about betting companies.
+            Fundada por uma equipe de especialistas jurídicos e profissionais do setor, entendemos a importância da
+            diligência devida quando se trata de plataformas de jogos online. Nossos serviços de verificação ajudam
+            advogados, analistas e usuários comuns a tomar decisões informadas sobre empresas de apostas.
           </Text>
           <Text>
-            We believe in transparency, accuracy, and user empowerment. Every review on our platform is carefully
-            moderated, and our verification services follow strict legal and regulatory standards to ensure the highest
-            quality of information.
+            Acreditamos em transparência, precisão e empoderamento do usuário. Cada análise em nossa plataforma é
+            cuidadosamente moderada, e nossos serviços de verificação seguem rigorosos padrões legais e regulatórios
+            para garantir a mais alta qualidade de informação.
           </Text>
         </VStack>
       </Container>

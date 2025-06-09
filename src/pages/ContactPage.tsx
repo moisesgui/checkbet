@@ -6,12 +6,12 @@ export const ContactPage = () => {
       <Container maxW="container.xl">
         <VStack spacing={6} align="start">
           <Heading as="h1" size="xl">
-            Contact Us
+            Entre em Contato
           </Heading>
-          <Text fontSize="lg">Get in touch with our team for support, partnerships, or general inquiries.</Text>
-          <Text>Email: contact@betreview.com</Text>
-          <Text>Phone: +55 11 1234-5678</Text>
-          <Text>Address: Rua das Flores, 123 - São Paulo, SP - Brazil</Text>
+          <Text fontSize="lg">Entre em contato com nossa equipe para suporte, parcerias ou consultas gerais.</Text>
+          <Text>Email: contato@betreview.com</Text>
+          <Text>Telefone: +55 11 1234-5678</Text>
+          <Text>Endereço: Rua das Flores, 123 - São Paulo, SP - Brasil</Text>
         </VStack>
       </Container>
     </Box>

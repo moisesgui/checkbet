@@ -14,42 +14,42 @@ export const Footer = () => {
           <Stack spacing={6}>
             <Box>
               <Text fontSize="lg" fontWeight="bold" color="brand.500">
-                BET Review Platform
+                Plataforma de Revisão de Apostas
               </Text>
             </Box>
             <Text fontSize="sm">
-              The most trusted platform for reviewing and verifying online betting and casino companies.
+              A plataforma mais confiável para revisar e verificar empresas de apostas e cassinos online.
             </Text>
           </Stack>
           <Stack align="flex-start">
             <Text fontWeight="500" fontSize="lg" mb={2}>
-              Company
+              Empresa
             </Text>
             <Link as={RouterLink} to="/about" color={linkColor} _hover={{ color: linkHoverColor }}>
-              About Us
+              Sobre Nós
             </Link>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
               Blog
             </Link>
             <Link as={RouterLink} to="/contact" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Contact Us
+              Contato
             </Link>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Pricing
+              Preços
             </Link>
           </Stack>
           <Stack align="flex-start">
             <Text fontWeight="500" fontSize="lg" mb={2}>
-              Support
+              Suporte
             </Text>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Help Center
+              Central de Ajuda
             </Link>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Safety Center
+              Centro de Segurança
             </Link>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Community Guidelines
+              Diretrizes da Comunidade
             </Link>
           </Stack>
           <Stack align="flex-start">
@@ -57,13 +57,13 @@ export const Footer = () => {
               Legal
             </Text>
             <Link as={RouterLink} to="/privacy" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Privacy Policy
+              Política de Privacidade
             </Link>
             <Link as={RouterLink} to="/terms" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Terms of Service
+              Termos de Serviço
             </Link>
             <Link href="#" color={linkColor} _hover={{ color: linkHoverColor }}>
-              Cookie Policy
+              Política de Cookies
             </Link>
           </Stack>
         </SimpleGrid>
@@ -72,7 +72,7 @@ export const Footer = () => {
       <Box py={4}>
         <Container maxW="container.xl">
           <Text fontSize="sm" textAlign="center">
-            © {new Date().getFullYear()} BET Review Platform. All rights reserved.
+            © {new Date().getFullYear()} Plataforma de Revisão de Apostas. Todos os direitos reservados.
           </Text>
         </Container>
       </Box>

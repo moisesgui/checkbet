@@ -34,23 +34,23 @@ const companies: Company[] = [
   {
     id: "1",
     name: "BetStar",
-    logo: "/placeholder.svg?height=120&width=120",
+    logo: "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=200&h=200&fit=crop&auto=format",
     rating: 4.8,
     reviews: 1245,
     verified: true,
-    country: "Brazil",
-    summary: "Leading online betting platform with excellent customer service.",
+    country: "Brasil",
+    summary: "Plataforma líder de apostas online com excelente atendimento ao cliente.",
     foundedYear: 2015,
     employees: "100-500",
-    headquarters: "São Paulo, Brazil",
+    headquarters: "São Paulo, Brasil",
     website: "https://betstar.example.com",
     description:
-      "BetStar is a leading online betting platform offering a wide range of sports betting options, casino games, and live betting experiences. With a focus on customer satisfaction and security, BetStar has established itself as one of the most trusted betting platforms in Brazil.",
+      "BetStar é uma plataforma líder de apostas online que oferece uma ampla gama de opções de apostas esportivas, jogos de cassino e experiências de apostas ao vivo. Com foco na satisfação do cliente e segurança, a BetStar se estabeleceu como uma das plataformas de apostas mais confiáveis do Brasil.",
     legalInfo: {
       registrationNumber: "12.345.678/0001-90",
       licenseNumber: "BET-BR-2023-45678",
-      licenseAuthority: "Brazilian Gaming Commission",
-      licenseStatus: "Active",
+      licenseAuthority: "Comissão Brasileira de Jogos",
+      licenseStatus: "Ativo",
       licenseExpiry: "2025-12-31",
     },
   },
@@ -59,7 +59,6 @@ const companies: Company[] = [
 export const CompanyDetailPage = () => {
   const { id } = useParams<{ id: string }>()
   
-  // All hooks must be called at the top level
   const bgColor = useColorModeValue("white", "gray.800")
   const borderColor = useColorModeValue("gray.200", "gray.700")
   const textColor = useColorModeValue("gray.700", "gray.300")
@@ -67,11 +66,9 @@ export const CompanyDetailPage = () => {
   const filledStarColor = useColorModeValue("yellow.400", "yellow.300")
   const emptyStarColor = useColorModeValue("gray.300", "gray.600")
   const infoBoxBg = useColorModeValue("blue.50", "blue.900")
-
-  // Find the company by ID
+    
   const company = companies.find((c) => c.id === id) || companies[0]
 
-  // If no company is found, show an error message
   if (!company) {
     return (
       <Box py={8}>
@@ -86,9 +83,9 @@ export const CompanyDetailPage = () => {
             p={6}
           >
             <Heading as="h1" size="xl" color="red.500">
-              Company Not Found
+              Empresa Não Encontrada
             </Heading>
-            <Text mt={4}>The requested company could not be found.</Text>
+            <Text mt={4}>A empresa solicitada não pôde ser encontrada.</Text>
           </Box>
         </Container>
       </Box>
@@ -117,7 +114,7 @@ export const CompanyDetailPage = () => {
   const StatusBadge = ({ verified }: { verified: boolean }) => {
     return (
       <Badge colorScheme={verified ? "green" : "gray"} fontSize="sm" borderRadius="full" px={3} py={1}>
-        {verified ? "Verified" : "Unverified"}
+        {verified ? "Verificado" : "Não Verificado"}
       </Badge>
     )
   }
@@ -125,15 +122,16 @@ export const CompanyDetailPage = () => {
   return (
     <Box py={8}>
       <Container maxW="container.xl">
-        {/* Company header */}
         <Box
           bg={bgColor}
-          borderRadius="lg"
+          borderRadius="22px"
           overflow="hidden"
           boxShadow="md"
           borderWidth="1px"
           borderColor={borderColor}
           mb={8}
+          transition="transform 0.2s"
+          _hover={{ transform: "translateY(-4px)" }}
         >
           <Flex p={6} direction={{ base: "column", md: "row" }} align={{ base: "center", md: "start" }} gap={6}>
             <Image
@@ -168,44 +166,44 @@ export const CompanyDetailPage = () => {
           </Flex>
         </Box>
 
-        {/* Company details tabs */}
         <Tabs colorScheme="brand" isLazy>
           <TabList overflowX="auto" overflowY="hidden" py={2}>
-            <Tab>Overview</Tab>
-            <Tab>Legal Information</Tab>
-            <Tab>Reviews</Tab>
+            <Tab>Visão Geral</Tab>
+            <Tab>Informações Legais</Tab>
+            <Tab>Avaliações</Tab>
           </TabList>
 
           <TabPanels>
-            {/* Overview Tab */}
             <TabPanel>
               <Box
                 bg={bgColor}
-                borderRadius="lg"
+                borderRadius="22px"
                 overflow="hidden"
                 boxShadow="md"
                 borderWidth="1px"
                 borderColor={borderColor}
                 p={6}
+                transition="transform 0.2s"
+                _hover={{ transform: "translateY(-4px)" }}
               >
                 <Heading as="h3" size="md" mb={6}>
-                  Company Information
+                  Informações da Empresa
                 </Heading>
 
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6}>
                   <Stat>
-                    <StatLabel>Founded</StatLabel>
+                    <StatLabel>Fundada</StatLabel>
                     <StatNumber>{company.foundedYear}</StatNumber>
                     <StatHelpText>
                       <HStack>
                         <Icon as={FiCalendar} boxSize={4} />
-                        <Text>{new Date().getFullYear() - company.foundedYear!} years ago</Text>
+                        <Text>{new Date().getFullYear() - company.foundedYear!} anos atrás</Text>
                       </HStack>
                     </StatHelpText>
                   </Stat>
 
                   <Stat>
-                    <StatLabel>Headquarters</StatLabel>
+                    <StatLabel>Sede</StatLabel>
                     <StatNumber>{company.headquarters?.split(",")[0]}</StatNumber>
                     <StatHelpText>
                       <HStack>
@@ -216,18 +214,18 @@ export const CompanyDetailPage = () => {
                   </Stat>
 
                   <Stat>
-                    <StatLabel>Employees</StatLabel>
+                    <StatLabel>Funcionários</StatLabel>
                     <StatNumber>{company.employees}</StatNumber>
                     <StatHelpText>
                       <HStack>
                         <Icon as={FiUsers} boxSize={4} />
-                        <Text>Team size</Text>
+                        <Text>Tamanho da equipe</Text>
                       </HStack>
                     </StatHelpText>
                   </Stat>
 
                   <Stat>
-                    <StatLabel>Verification Status</StatLabel>
+                    <StatLabel>Status de Verificação</StatLabel>
                     <StatNumber>
                       <StatusBadge verified={company.verified} />
                     </StatNumber>
@@ -238,7 +236,7 @@ export const CompanyDetailPage = () => {
                           boxSize={4}
                           color={company.verified ? "green.500" : "orange.500"}
                         />
-                        <Text>{company.verified ? "Fully verified" : "Not verified"}</Text>
+                        <Text>{company.verified ? "Totalmente verificado" : "Não verificado"}</Text>
                       </HStack>
                     </StatHelpText>
                   </Stat>
@@ -247,13 +245,13 @@ export const CompanyDetailPage = () => {
                 <Divider my={6} borderColor={borderColor} />
 
                 <Heading as="h3" size="md" mb={4}>
-                  About {company.name}
+                  Sobre {company.name}
                 </Heading>
 
                 <Text color={textColor}>{company.description}</Text>
 
                 <Text mt={4} color={textColor}>
-                  Visit their website:{" "}
+                  Visite o site:{" "}
                   <Box as="span" color="brand.500">
                     {company.website}
                   </Box>
@@ -261,50 +259,51 @@ export const CompanyDetailPage = () => {
               </Box>
             </TabPanel>
 
-            {/* Legal Information Tab */}
             <TabPanel>
               <Box
                 bg={bgColor}
-                borderRadius="lg"
+                borderRadius="22px"
                 overflow="hidden"
                 boxShadow="md"
                 borderWidth="1px"
                 borderColor={borderColor}
                 p={6}
+                transition="transform 0.2s"
+                _hover={{ transform: "translateY(-4px)" }}
               >
                 <Heading as="h3" size="md" mb={6}>
-                  Legal Information
+                  Informações Legais
                 </Heading>
 
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
                   <VStack align="start" spacing={2}>
-                    <Text fontWeight="bold">Registration Number</Text>
+                    <Text fontWeight="bold">Número de Registro</Text>
                     <Text>{company.legalInfo?.registrationNumber}</Text>
                   </VStack>
 
                   <VStack align="start" spacing={2}>
-                    <Text fontWeight="bold">License Number</Text>
+                    <Text fontWeight="bold">Número da Licença</Text>
                     <Text>{company.legalInfo?.licenseNumber}</Text>
                   </VStack>
 
                   <VStack align="start" spacing={2}>
-                    <Text fontWeight="bold">License Authority</Text>
+                    <Text fontWeight="bold">Autoridade Licenciadora</Text>
                     <Text>{company.legalInfo?.licenseAuthority}</Text>
                   </VStack>
 
                   <VStack align="start" spacing={2}>
-                    <Text fontWeight="bold">License Status</Text>
+                    <Text fontWeight="bold">Status da Licença</Text>
                     <Badge
                       colorScheme={company.legalInfo?.licenseStatus === "Active" ? "green" : "red"}
                       borderRadius="full"
                       px={2}
                     >
-                      {company.legalInfo?.licenseStatus}
+                      {company.legalInfo?.licenseStatus === "Active" ? "Ativo" : "Inativo"}
                     </Badge>
                   </VStack>
 
                   <VStack align="start" spacing={2}>
-                    <Text fontWeight="bold">License Expiry</Text>
+                    <Text fontWeight="bold">Data de Expiração da Licença</Text>
                     <Text>
                       {company.legalInfo?.licenseExpiry &&
                         new Date(company.legalInfo.licenseExpiry).toLocaleDateString()}
@@ -314,14 +313,12 @@ export const CompanyDetailPage = () => {
 
                 <Box mt={8} p={4} bg={infoBoxBg} borderRadius="md">
                   <Text fontSize="sm">
-                    This information has been verified by our legal team. For more detailed information or to report any
-                    discrepancies, please contact our support team.
+                    Estas informações foram verificadas pela nossa equipe jurídica. Para informações mais detalhadas ou para reportar qualquer discrepância, entre em contato com nossa equipe de suporte.
                   </Text>
                 </Box>
               </Box>
             </TabPanel>
 
-            {/* Reviews Tab */}
             <TabPanel px={0}>
               <CommentSection />
             </TabPanel>

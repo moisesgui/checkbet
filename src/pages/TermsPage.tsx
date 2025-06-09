@@ -6,19 +6,19 @@ export const TermsPage = () => {
       <Container maxW="container.xl">
         <VStack spacing={6} align="start">
           <Heading as="h1" size="xl">
-            Terms of Service
+            Termos de Serviço
           </Heading>
-          <Text fontSize="lg">Please read these terms carefully before using our platform.</Text>
+          <Text fontSize="lg">Por favor, leia estes termos com atenção antes de usar nossa plataforma.</Text>
           <Text>
-            By accessing and using this website, you accept and agree to be bound by the terms and provision of this
-            agreement.
+            Ao acessar e usar este site, você aceita e concorda em estar vinculado aos termos e condições deste
+            acordo.
           </Text>
           <Heading as="h2" size="lg">
-            Use License
+            Licença de Uso
           </Heading>
           <Text>
-            Permission is granted to temporarily download one copy of the materials on BET Review Platform's website for
-            personal, non-commercial transitory viewing only.
+            É concedida permissão para baixar temporariamente uma cópia dos materiais no site da Plataforma de Revisão
+            de Apostas apenas para visualização pessoal e não comercial.
           </Text>
         </VStack>
       </Container>

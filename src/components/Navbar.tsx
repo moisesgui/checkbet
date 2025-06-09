@@ -1,4 +1,3 @@
-
 import type React from "react"
 
 import {
@@ -45,7 +44,6 @@ export const Navbar = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      // Navigate to search results or filter companies
       console.log("Searching for:", searchQuery)
     }
   }
@@ -63,16 +61,14 @@ export const Navbar = () => {
     >
       <Container maxW="container.xl" py={3}>
         <Flex justify="space-between" align="center">
-          {/* Logo */}
           <Link to="/">
             <Flex align="center" cursor="pointer">
               <Text fontSize="xl" fontWeight="bold" color="brand.500">
-                BET Review
+                CheckBet
               </Text>
             </Flex>
           </Link>
 
-          {/* Mobile Menu Button */}
           <IconButton
             display={{ base: "flex", md: "none" }}
             aria-label="Open menu"
@@ -81,24 +77,23 @@ export const Navbar = () => {
             variant="ghost"
           />
 
-          {/* Desktop Navigation */}
           <HStack spacing={4} display={{ base: "none", md: "flex" }} flex={1} justify="center">
-            <form onSubmit={handleSearch}>
-              <InputGroup maxW="400px">
+            <form onSubmit={handleSearch} style={{ width: "100%", maxWidth: "800px" }}>
+              <InputGroup size="lg">
                 <InputLeftElement pointerEvents="none">
-                  <FiSearch size={18} />
+                  <FiSearch size={20} />
                 </InputLeftElement>
                 <Input
-                  placeholder="Search for companies..."
+                  placeholder="Pesquisar empresas..."
                   borderRadius="full"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  height="48px"
                 />
               </InputGroup>
             </form>
           </HStack>
 
-          {/* Right Side Actions */}
           <HStack spacing={3} display={{ base: "none", md: "flex" }}>
             <IconButton
               aria-label={`Switch to ${colorMode === "light" ? "dark" : "light"} mode`}
@@ -114,23 +109,22 @@ export const Navbar = () => {
                   <Avatar size="sm" name={user.name} src={user.avatar} />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem icon={<FiUser size={16} />}>Profile</MenuItem>
-                  <MenuItem icon={<FiSettings size={16} />}>Settings</MenuItem>
+                  <MenuItem icon={<FiUser size={16} />}>Perfil</MenuItem>
+                  <MenuItem icon={<FiSettings size={16} />}>Configurações</MenuItem>
                   <MenuItem icon={<FiLogOut size={16} />} onClick={logout}>
-                    Logout
+                    Sair
                   </MenuItem>
                 </MenuList>
               </Menu>
             ) : (
               <Button size="sm" colorScheme="brand">
-                Sign In
+                Entrar
               </Button>
             )}
           </HStack>
         </Flex>
       </Container>
 
-      {/* Mobile Drawer */}
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
@@ -138,15 +132,16 @@ export const Navbar = () => {
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
             <VStack spacing={4} align="stretch">
-              <form onSubmit={handleSearch}>
-                <InputGroup>
+              <form onSubmit={handleSearch} style={{ width: "100%", maxWidth: "800px" }}>
+                <InputGroup size="lg">
                   <InputLeftElement pointerEvents="none">
-                    <FiSearch size={18} />
+                    <FiSearch size={20} />
                   </InputLeftElement>
                   <Input
-                    placeholder="Search for companies..."
+                    placeholder="Pesquisar empresas..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    height="48px"
                   />
                 </InputGroup>
               </form>
@@ -157,16 +152,16 @@ export const Navbar = () => {
                 justifyContent="flex-start"
                 variant="ghost"
               >
-                {colorMode === "light" ? "Dark Mode" : "Light Mode"}
+                {colorMode === "light" ? "Modo Escuro" : "Modo Claro"}
               </Button>
 
               {user ? (
                 <>
                   <Button leftIcon={<FiUser size={18} />} justifyContent="flex-start" variant="ghost">
-                    Profile
+                    Perfil
                   </Button>
                   <Button leftIcon={<FiSettings size={18} />} justifyContent="flex-start" variant="ghost">
-                    Settings
+                    Configurações
                   </Button>
                   <Button
                     leftIcon={<FiLogOut size={18} />}
@@ -174,11 +169,11 @@ export const Navbar = () => {
                     variant="ghost"
                     onClick={logout}
                   >
-                    Logout
+                    Sair
                   </Button>
                 </>
               ) : (
-                <Button colorScheme="brand">Sign In</Button>
+                <Button colorScheme="brand">Entrar</Button>
               )}
             </VStack>
           </DrawerBody>

@@ -19,47 +19,47 @@ import { FiCheck, FiX, FiShield, FiAlertTriangle, FiFileText } from "react-icons
 // Service tiers data
 const serviceTiers = [
   {
-    name: "Basic",
-    price: "R$299",
-    description: "Essential verification for small betting sites",
+    name: "Básico",
+    price: "R$24",
+    description: "Verificação essencial para sites de apostas pequenos",
     features: [
-      { name: "Receita Federal info", included: true },
-      { name: "CEFaz data", included: true },
-      { name: "Legal status", included: true },
-      { name: "Legal representatives", included: false },
-      { name: "Headquarters verification", included: false },
-      { name: "Open lawsuits", included: false },
+      { name: "Informações da Receita Federal", included: true },
+      { name: "Dados do CEFaz", included: true },
+      { name: "Situação jurídica", included: true },
+      { name: "Representantes legais", included: false },
+      { name: "Verificação de sede", included: false },
+      { name: "Processos em aberto", included: false },
     ],
     icon: FiAlertTriangle,
     color: "blue",
   },
   {
-    name: "Advanced",
-    price: "R$599",
-    description: "Comprehensive verification for established platforms",
+    name: "Avançado",
+    price: "R$48",
+    description: "Verificação abrangente para plataformas estabelecidas",
     features: [
-      { name: "Receita Federal info", included: true },
-      { name: "CEFaz data", included: true },
-      { name: "Legal status", included: true },
-      { name: "Legal representatives", included: true },
-      { name: "Headquarters verification", included: true },
-      { name: "Open lawsuits", included: false },
+      { name: "Informações da Receita Federal", included: true },
+      { name: "Dados do CEFaz", included: true },
+      { name: "Situação jurídica", included: true },
+      { name: "Representantes legais", included: true },
+      { name: "Verificação de sede", included: true },
+      { name: "Processos em aberto", included: false },
     ],
     icon: FiShield,
     color: "purple",
     popular: true,
   },
   {
-    name: "Full",
-    price: "R$999",
-    description: "Complete verification with all available checks",
+    name: "Completo",
+    price: "R$80",
+    description: "Verificação completa com todas as verificações disponíveis",
     features: [
-      { name: "Receita Federal info", included: true },
-      { name: "CEFaz data", included: true },
-      { name: "Legal status", included: true },
-      { name: "Legal representatives", included: true },
-      { name: "Headquarters verification", included: true },
-      { name: "Open lawsuits", included: true },
+      { name: "Informações da Receita Federal", included: true },
+      { name: "Dados do CEFaz", included: true },
+      { name: "Situação jurídica", included: true },
+      { name: "Representantes legais", included: true },
+      { name: "Verificação de sede", included: true },
+      { name: "Processos em aberto", included: true },
     ],
     icon: FiFileText,
     color: "green",
@@ -80,11 +80,11 @@ export const PremiumServices = () => {
       <Container maxW="container.xl">
         <VStack spacing={4} mb={10} textAlign="center">
           <Heading as="h2" size="xl" color={headingColor}>
-            Premium Verification Services
+            Serviços Premium de Verificação
           </Heading>
           <Text fontSize="lg" maxW="800px">
-            Ensure the legitimacy of betting platforms with our professional verification services. Protect yourself and
-            your clients with thorough legal and financial checks.
+            Garanta a legitimidade das plataformas de apostas com nossos serviços profissionais de verificação. Proteja
+            você e seus clientes com verificações jurídicas e financeiras abrangentes.
           </Text>
         </VStack>
 
@@ -93,7 +93,7 @@ export const PremiumServices = () => {
             <Box
               key={tier.name}
               bg={tier.popular ? popularBg : bgColor}
-              borderRadius="lg"
+              borderRadius="22px"
               overflow="hidden"
               boxShadow="lg"
               borderWidth="1px"
@@ -106,7 +106,7 @@ export const PremiumServices = () => {
             >
               {tier.popular && (
                 <Badge colorScheme="purple" position="absolute" top={4} right={4} borderRadius="full" px={3} py={1}>
-                  Most Popular
+                  Mais Popular
                 </Badge>
               )}
 
@@ -123,7 +123,7 @@ export const PremiumServices = () => {
                     {tier.price}
                     <Box as="span" fontSize="md" fontWeight="normal">
                       {" "}
-                      / per verification
+                      / por verificação
                     </Box>
                   </Heading>
 
@@ -147,7 +147,7 @@ export const PremiumServices = () => {
 
               <Box p={6} bg={buttonBgColor}>
                 <Button colorScheme={tier.color} size="lg" width="full" variant={tier.popular ? "solid" : "outline"}>
-                  Buy Now
+                  Comprar Agora
                 </Button>
               </Box>
             </Box>

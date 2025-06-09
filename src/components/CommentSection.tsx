@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import {
   Box,
@@ -131,7 +130,7 @@ export const CommentSection = () => {
         </Flex>
 
         {/* New comment form */}
-        <Box bg={bgColor} borderRadius="lg" p={6} mb={8} boxShadow="md" borderWidth="1px" borderColor={borderColor}>
+        <Box bg={bgColor} borderRadius="22px" p={6} mb={8} boxShadow="md" borderWidth="1px" borderColor={borderColor}>
           <Heading as="h3" size="md" mb={4}>
             Write a Review
           </Heading>
@@ -161,7 +160,7 @@ export const CommentSection = () => {
             <Box
               key={review.id}
               bg={bgColor}
-              borderRadius="lg"
+              borderRadius="22px"
               p={6}
               boxShadow="sm"
               borderWidth="1px"
@@ -186,12 +185,12 @@ export const CommentSection = () => {
 
               <Flex justify="space-between" align="center">
                 <Text fontSize="sm" color={commentTextColor}>
-                  Was this review helpful?
+                  Esta análise foi útil?
                 </Text>
                 <HStack spacing={2}>
                   <IconButton
                     icon={<FiThumbsUp size={16} />}
-                    aria-label="Helpful"
+                    aria-label="Útil"
                     size="sm"
                     colorScheme={userVotes[review.id] === "helpful" ? "green" : "gray"}
                     variant={userVotes[review.id] === "helpful" ? "solid" : "outline"}
@@ -201,7 +200,7 @@ export const CommentSection = () => {
 
                   <IconButton
                     icon={<FiThumbsDown size={16} />}
-                    aria-label="Unhelpful"
+                    aria-label="Não Útil"
                     size="sm"
                     colorScheme={userVotes[review.id] === "unhelpful" ? "red" : "gray"}
                     variant={userVotes[review.id] === "unhelpful" ? "solid" : "outline"}
